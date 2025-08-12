@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/suryansh74/banking/errs"
+	"github.com/suryansh74/banking/logger"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -33,7 +34,7 @@ func (d CustomerRepositoryDB) FindAll() ([]Customer, error) {
 		var c Customer
 		err := rows.Scan(&c.ID, &c.Name, &c.City, &c.ZipCode, &c.DateofBirth, &c.Status)
 		if err != nil {
-			log.Println("Error while scanning customers" + err.Error())
+			logger.Error("Error while scanning customers" + err.Error())
 			return nil, err
 		}
 		customers = append(customers, c)
@@ -50,7 +51,7 @@ func (d CustomerRepositoryDB) ByID(id string) (*Customer, *errs.AppError) {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, errs.NewNotFoundError("customer not found")
 		} else {
-			log.Println("Error while scanning customer:", err)
+			logger.Error("Error while scanning customer:" + err.Error())
 			return nil, errs.NewUnexpectedError("unexpected error")
 		}
 	}
