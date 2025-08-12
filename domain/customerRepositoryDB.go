@@ -10,6 +10,7 @@ import (
 	"github.com/suryansh74/banking/logger"
 
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/jmoiron/sqlx"
 )
 
 type CustomerRepositoryDB struct {
@@ -29,16 +30,20 @@ func (d CustomerRepositoryDB) FindAll() ([]Customer, error) {
 	defer rows.Close()
 
 	customers := make([]Customer, 0)
-
-	for rows.Next() {
-		var c Customer
-		err := rows.Scan(&c.ID, &c.Name, &c.City, &c.ZipCode, &c.DateofBirth, &c.Status)
-		if err != nil {
-			logger.Error("Error while scanning customers" + err.Error())
-			return nil, err
-		}
-		customers = append(customers, c)
+	err = sqlx.StructScan(rows, &customers)
+	if err != nil {
+		logger.Error("Error while scanning customers" + err.Error())
+		return nil, err
 	}
+	// for rows.Next() {
+	// 	var c Customer
+	// 	err := rows.Scan(&c.ID, &c.Name, &c.City, &c.ZipCode, &c.DateofBirth, &c.Status)
+	// 	if err != nil {
+	// 		logger.Error("Error while scanning customers" + err.Error())
+	// 		return nil, err
+	// 	}
+	// 	customers = append(customers, c)
+	// }
 	return customers, nil
 }
 
