@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Chitransh Shrivastav – Full Stack Developer & Machine Learning Enthusiast
+    </title>
+    <meta
+      name="description"
+      content="Chitransh Shrivastav is a 23-year-old Full Stack Developer and Machine Learning Developer specializing in React, Next.js, Laravel, Golang, Node.js, Django, Flask, REST and gRPC APIs, databases, and microservices."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, Machine Learning Developer, Laravel, Golang, Node.js, Django, Flask, React, Next.js, Microservices, REST API, gRPC"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Chitransh Shrivastav – Full Stack Developer & Machine Learning Enthusiast"
+    />
+    <meta
+      property="og:description"
+      content="Building scalable web & AI solutions with React, Next.js, Laravel, Golang, Node.js, Django, Flask, REST, gRPC, and microservices."
+    />
+    <meta
+      property="og:image"
+      content="https://via.placeholder.com/1200x630.png?text=Chitransh+Shrivastav"
+    />
+    <meta property="og:site_name" content="Chitransh Shrivastav" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Chitransh Shrivastav – Full Stack Developer & Machine Learning Enthusiast"
+    />
+    <meta
+      name="twitter:description"
+      content="Full Stack & ML developer crafting scalable web and AI solutions."
+    />
+
+    <!-- Schema.org Article JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Chitransh Shrivastav – Full Stack Developer & Machine Learning Enthusiast",
+        "author": {
+          "@type": "Person",
+          "name": "Chitransh Shrivastav"
+        },
+        "about": [
+          "Full Stack Development",
+          "Machine Learning",
+          "Microservices",
+          "API Development"
+        ],
+        "datePublished": "2025-08-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Chitransh Shrivastav"
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #0b1020; /* deep navy */
+        --panel: #121a33; /* card background */
+        --ink: #eaf2ff; /* primary text */
+        --muted: #a8b3cf; /* secondary text */
+        --accent: #7c9cff; /* brand accent */
+        --accent-2: #59e1ff; /* secondary accent */
+        --ring: rgba(124, 156, 255, 0.35);
+        --radius: 18px;
+        --shadow:
+          0 10px 30px rgba(0, 0, 0, 0.35), 0 6px 16px rgba(16, 24, 40, 0.25);
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          "Noto Sans",
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(
+            1200px 800px at 10% 10%,
+            rgba(124, 156, 255, 0.08),
+            transparent
+          ),
+          radial-gradient(
+            1200px 800px at 90% 20%,
+            rgba(89, 225, 255, 0.08),
+            transparent
+          ),
+          var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+      }
+      .container {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding: 32px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          180deg,
+          rgba(11, 16, 32, 0.9),
+          rgba(11, 16, 32, 0.65)
+        );
+        border-bottom: 1px solid rgba(124, 156, 255, 0.18);
+      }
+      .nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .badge {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 0 0 6px rgba(124, 156, 255, 0.12);
+      }
+      .brand h1 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .links a {
+        color: var(--muted);
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+      }
+      .links a:hover {
+        color: var(--ink);
+        border-color: rgba(124, 156, 255, 0.25);
+        background: rgba(124, 156, 255, 0.08);
+      }
+      .sr-only {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .hero {
+        padding: 64px 32px 24px;
+        text-align: center;
+      }
+      .title {
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        font-weight: 800;
+      }
+      .subtitle {
+        color: var(--muted);
+        margin: 0 auto 24px;
+        max-width: 800px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .card {
+        grid-column: 1/-1;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(124, 156, 255, 0.18);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+      @media (min-width: 900px) {
+        .card.span-7 {
+          grid-column: span 7;
+        }
+        .card.span-5 {
+          grid-column: span 5;
+        }
+      }
+
+      h2 {
+        font-size: clamp(20px, 2.4vw, 28px);
+        margin: 0 0 14px;
+      }
+      h3 {
+        font-size: 18px;
+        margin: 22px 0 10px;
+      }
+      p {
+        margin: 0 0 14px;
+      }
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      li {
+        margin: 6px 0;
+      }
+
+      .pill {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(124, 156, 255, 0.25);
+        background: rgba(124, 156, 255, 0.08);
+        color: var(--ink);
+        font-size: 12px;
+      }
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .section-heading svg {
+        opacity: 0.9;
+      }
+
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .btn {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-weight: 700;
+      }
+      .btn--primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #0b1020;
+        box-shadow: 0 8px 24px var(--ring);
+      }
+      .btn--ghost {
+        background: transparent;
+        border: 1px solid rgba(124, 156, 255, 0.3);
+        color: var(--ink);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--ring);
+        outline-offset: 2px;
+      }
+
+      footer {
+        margin-top: 40px;
+        padding: 32px;
+        border-top: 1px solid rgba(124, 156, 255, 0.18);
+        color: var(--muted);
+        text-align: center;
+      }
+      footer a {
+        color: var(--ink);
+      }
+
+      /* Anchor offset for sticky header */
+      section {
+        scroll-margin-top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#content" class="sr-only">Skip to content</a>
+
+    <header>
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top">
+          <span class="badge" aria-hidden="true"></span>
+          <h1>Chitransh Shrivastav</h1>
+        </a>
+        <div class="links">
+          <a href="#introduction">Introduction</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#why-me">Why Me</a>
+          <a href="#goals">Vision</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero" id="introduction">
+        <p class="pill" aria-label="keywords">
+          <span>Full Stack Developer</span> •
+          <span>Machine Learning Developer</span> •
+          <span>Backend & Frontend Expert</span>
+        </p>
+        <h2 class="title">
+          Chitransh Shrivastav – Full Stack Developer & Machine Learning
+          Enthusiast
+        </h2>
+        <p class="subtitle">
+          I’m <strong>Chitransh Shrivastav</strong>, a 23-year-old
+          <em>Full Stack Developer</em>, <em>Machine Learning Developer</em>,
+          and <em>Backend & Frontend Expert</em> with a passion for building
+          scalable, efficient, and innovative solutions. With a background in
+          <strong>Computer Science</strong>, I create high-performance
+          applications that blend clean design with robust functionality across
+          multiple languages and frameworks.
+        </p>
+        <div class="cta">
+          <a class="btn btn--primary" href="#contact">Work with me</a>
+          <a class="btn btn--ghost" href="#projects">View projects</a>
+        </div>
+      </section>
+
+      <div class="grid">
+        <!-- Education -->
+        <section
+          id="education"
+          class="card span-7"
+          aria-labelledby="education-title"
+        >
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM1 13l11 6 11-6"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h2 id="education-title">Educational Background</h2>
+          </div>
+          <p>
+            I graduated in <strong>Computer Science</strong>, building a solid
+            foundation in programming, data structures, algorithms, and software
+            architecture. This academic journey sparked my interest in
+            <strong>full stack development</strong> and
+            <strong>artificial intelligence</strong>, inspiring me to build apps
+            that are smarter, faster, and more reliable. The problem‑solving
+            discipline I developed continues to shape my approach to software
+            engineering.
+          </p>
+        </section>
+
+        <!-- Why Me (sidebar) -->
+        <aside id="why-me" class="card span-5" aria-labelledby="why-title">
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2a7 7 0 100 14 7 7 0 000-14zM5 22a7 7 0 0114 0"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h2 id="why-title">Why Choose Me</h2>
+          </div>
+          <ul>
+            <li>
+              <strong>Strong problem‑solving</strong> mindset focused on
+              practical outcomes.
+            </li>
+            <li>
+              <strong>Versatile expertise</strong> across multiple languages and
+              frameworks.
+            </li>
+            <li>
+              <strong>AI/ML integration</strong> experience for real‑world
+              applications.
+            </li>
+            <li>
+              <strong>Adaptable</strong> to evolving tech stacks and project
+              needs.
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Skills -->
+        <section id="skills" class="card span-7" aria-labelledby="skills-title">
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h2 id="skills-title">Technical Skills &amp; Expertise</h2>
+          </div>
+
+          <h3>Frontend Development</h3>
+          <ul>
+            <li>
+              Proficient in <strong>React.js</strong> and
+              <strong>Next.js</strong> for interactive, high‑performance apps.
+            </li>
+            <li>
+              Custom UI design and crafting <strong>responsive</strong>,
+              user‑friendly interfaces.
+            </li>
+          </ul>
+
+          <h3>Backend Development</h3>
+          <ul>
+            <li>
+              Skilled in <strong>PHP Laravel</strong>, <strong>Golang</strong>,
+              <strong>Node.js</strong>, <strong>Django</strong>, and
+              <strong>Flask</strong>.
+            </li>
+            <li>
+              Experienced in <strong>REST API</strong> and
+              <strong>gRPC</strong> development.
+            </li>
+            <li>
+              Deep understanding of <strong>POST/GET</strong> request handling
+              and backend optimization.
+            </li>
+          </ul>
+
+          <h3>Database &amp; Microservices</h3>
+          <ul>
+            <li>
+              Working knowledge of <strong>MySQL</strong>,
+              <strong>PostgreSQL</strong>, and <strong>MongoDB</strong>.
+            </li>
+            <li>
+              Designing and implementing
+              <strong>microservices</strong> architecture for scalability.
+            </li>
+          </ul>
+
+          <h3>Machine Learning</h3>
+          <ul>
+            <li>
+              Developing and integrating <strong>basic ML models</strong> into
+              applications.
+            </li>
+            <li>
+              Using ML for automation, intelligent decision‑making, and
+              data‑driven insights.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Projects -->
+        <section
+          id="projects"
+          class="card span-5"
+          aria-labelledby="projects-title"
+        >
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 4h16v8H4zM4 14h10v6H4z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h2 id="projects-title">Project Experience</h2>
+          </div>
+          <ul>
+            <li>
+              Built <strong>full‑stack web applications</strong> with seamless
+              frontend‑backend integration.
+            </li>
+            <li>
+              Created <strong>graphical and interactive websites</strong> for
+              enhanced engagement.
+            </li>
+            <li>
+              Implemented <strong>API integrations</strong> using both
+              <strong>REST</strong> and <strong>gRPC</strong>.
+            </li>
+            <li>
+              Designed <strong>scalable microservices</strong> for high
+              availability and performance.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Goals & Vision -->
+        <section id="goals" class="card span-12" aria-labelledby="goals-title">
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2v20M2 12h20"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h2 id="goals-title">Future Goals &amp; Vision</h2>
+          </div>
+          <ul>
+            <li>
+              Build <strong>AI‑powered scalable products</strong> for global
+              markets.
+            </li>
+            <li>
+              Explore <strong>cloud‑native microservices</strong> and
+              <strong>DevOps</strong> for better delivery pipelines.
+            </li>
+            <li>
+              Contribute to <strong>open‑source projects</strong> and the
+              developer community.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Contact / CTA -->
+        <section
+          id="contact"
+          class="card span-12"
+          aria-labelledby="contact-title"
+        >
+          <div class="section-heading">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M7 9l5 3 5-3"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h2 id="contact-title">Conclusion &amp; Contact</h2>
+          </div>
+          <p>
+            In a world driven by technology, I strive to deliver solutions that
+            are <strong>innovative</strong>, <strong>efficient</strong>, and
+            <strong>impactful</strong>. Whether you need a
+            <em>full stack web application</em>, an <em>AI‑driven system</em>,
+            or a <em>microservices‑based backend</em>, I bring the skills and
+            dedication to make it happen.
+          </p>
+          <div class="cta" role="group" aria-label="Contact options">
+            <!-- Replace the href values with your real links -->
+            <a class="btn btn--primary" href="mailto:hello@example.com"
+              >Email Me</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="https://your-portfolio.example"
+              target="_blank"
+              rel="noopener"
+              >Portfolio</a
+            >
+            <a
+              class="btn btn--ghost"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © <span id="y"></span> Chitransh Shrivastav · Full Stack Developer &
+        Machine Learning Developer
+      </p>
+    </footer>
+
+    <script>
+      // small enhancement: current year
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
