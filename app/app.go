@@ -16,7 +16,7 @@ import (
 
 func Start() {
 	router := mux.NewRouter()
-	dbClient := getDbClient()
+	dbClient := getDBClient()
 	customerRepositoryDB := domain.NewCustomerRepositoryDB(dbClient)
 	ch := CustomerHandlers{service.NewCustomerService(customerRepositoryDB)}
 	router.HandleFunc("/customers", ch.getAllCustomer).Methods(http.MethodGet)
@@ -33,7 +33,7 @@ func Start() {
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", address, port), router))
 }
 
-func getDbClient() *sqlx.DB {
+func getDBClient() *sqlx.DB {
 	// CONNECTION ESTABLISHMENT
 	dbUser := os.Getenv("DB_USER")
 	dbPasswd := os.Getenv("DB_PASSWORD")
