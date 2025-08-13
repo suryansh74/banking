@@ -3,10 +3,7 @@ package domain
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"log"
-	"os"
-	"time"
 
 	"github.com/suryansh74/banking/errs"
 	"github.com/suryansh74/banking/logger"
@@ -55,21 +52,6 @@ func (d CustomerRepositoryDB) ByID(id string) (*Customer, *errs.AppError) {
 	return &customer, nil
 }
 
-func NewCustomerRepositoryDB() CustomerRepositoryDB {
-	// CONNECTION ESTABLISHMENT
-	dbUser := os.Getenv("DB_USER")
-	dbPasswd := os.Getenv("DB_PASSWORD")
-	dbAddr := os.Getenv("DB_ADDR")
-	dbPort := os.Getenv("DB_PORT")
-	dbName := os.Getenv("DB_NAME")
-	logger.Info("value passed")
-	dataSource := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPasswd, dbAddr, dbPort, dbName)
-	client, err := sqlx.Open("mysql", dataSource)
-	if err != nil {
-		panic(err)
-	}
-	client.SetConnMaxLifetime(time.Minute * 3)
-	client.SetMaxOpenConns(10)
-	client.SetMaxIdleConns(10)
-	return CustomerRepositoryDB{client}
+func NewCustomerRepositoryDB(dbClient *sqlx.DB) CustomerRepositoryDB {
+	return CustomerRepositoryDB{dbClient}
 }
