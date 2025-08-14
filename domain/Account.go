@@ -13,7 +13,9 @@ type Account struct {
 	Amount      float64
 	Status      string
 }
-
+type Hi struct{
+	Price float64
+}
 type AccountRepository interface {
 	Save(Account) (*Account, *errs.AppError)
 }
@@ -21,3 +23,5 @@ type AccountRepository interface {
 func (a Account) ToNewAccountResponseDto() dto.NewAccountResponse {
 	return dto.NewAccountResponse{a.AccountID}
 }
+
+

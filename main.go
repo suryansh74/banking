@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/joho/godotenv"
@@ -15,5 +16,13 @@ func main() {
 	}
 
 	logger.Info("Starting the application...")
+	calling()
 	app.Start()
+}
+
+func calling() int {
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+	return 1
 }
